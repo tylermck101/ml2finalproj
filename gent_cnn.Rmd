@@ -1,0 +1,308 @@
+```{r}
+library(dplyr)
+df <- read.csv("gentrification_dataset_with_labels.csv")
+df
+```
+
+
+```{r}
+# List of metrics columns
+metrics_cols <- grep("_2005|_2006|_2007|_2008|_2009|_2010|_2011|_2012|_2013|_2014|_2015|_2016|_2017|_2018|_2019", names(df), value = TRUE)
+
+# Remove columns that contain the affordable
+metrics_cols <- metrics_cols[!grepl("affordable", metrics_cols)]
+
+metrics_cols <- metrics_cols[!grepl("income", metrics_cols)]
+
+# Extract metrics 
+metrics_data <- df[, metrics_cols]
+
+# Get lenghts
+num_neighborhoods <- nrow(df)
+num_years <- 15  # 2005–2019
+num_metrics <- length(metrics_cols) / num_years 
+
+# Initialize the 3D array
+X_3d <- array(NA, dim = c(num_neighborhoods, num_metrics, num_years))
+
+# Reshape data
+for (i in 1:num_neighborhoods) {
+  # Extract the row for each neighborhood
+  row_data <- metrics_data[i, ]
+  
+  # Fill the 3D array 
+  for (j in 1:num_metrics) {
+    start_col <- (j - 1) * num_years + 1
+    end_col <- j * num_years
+    
+    
+    # Ensure correct length
+    if (end_col <= length(row_data)) {
+      X_3d[i, j, ] <- as.numeric(unlist(row_data[start_col:end_col]))
+    } else {
+      warning(paste("Out of bounds for metric", j, "in neighborhood", i))
+    }
+  }
+}
+
+# Flatten 3D array into a 2D matrix
+#X_flat <- matrix(NA, nrow = num_neighborhoods, ncol = num_metrics * num_years)
+
+#for (i in 1:num_neighborhoods) {
+#  X_flat[i, ] <- as.vector(X_3d[i, , ])  # Flatten each neighborhood's data
+#}
+
+# Loop and replace NAs with column mean
+for (j in 1:dim(X_3d)[2]) {
+  for (k in 1:dim(X_3d)[3]) {
+    col_values <- X_3d[, j, k]
+    col_mean <- mean(col_values, na.rm = TRUE)
+    col_values[is.na(col_values)] <- col_mean
+    X_3d[, j, k] <- col_values
+  }
+}
+
+# Standardize 
+for (j in 1:dim(X_3d)[2]) {
+  for (k in 1:dim(X_3d)[3]) {
+    col_values <- X_3d[, j, k]
+    col_mean <- mean(col_values, na.rm = TRUE)
+    col_sd <- sd(col_values, na.rm = TRUE)
+    if (col_sd == 0) col_sd <- 1  # Prevent division by zero
+    X_3d[, j, k] <- (col_values - col_mean) / col_sd
+  }
+}
+
+
+#y <- as.integer(factor(df$gentrification_label, 
+#                       levels = c("Non-Gentrifying", "Gentrifying", "Higher-Income"))) - 1
+
+y <- ifelse(df$gentrification_label == "Gentrifying", 1, 0)
+
+# Split data 
+set.seed(40)
+train_indices <- sample(1:num_neighborhoods, size = floor(0.8 * num_neighborhoods))
+
+X_train <- X_3d[train_indices, , ]
+y_train <- y[train_indices]
+
+test_indices <- setdiff(1:num_neighborhoods, train_indices)
+X_test <- X_3d[test_indices, , ]
+
+y_test <- y[-train_indices]
+
+cat("Training data shape (X_train):", dim(X_train), "\n")
+cat("Training labels shape (y_train):", length(y_train), "\n")
+cat("Test data shape (X_test):", dim(X_test), "\n")
+cat("Test labels shape (y_test):", length(y_test), "\n")
+
+X_train_flat <- t(apply(X_train, 1, as.vector))
+X_test_flat <- t(apply(X_test, 1, as.vector))
+
+# Shape after flat
+cat("Training data shape (X_train) flat:", dim(X_train_flat), "\n")
+cat("Training labels shape (y_train):", length(y_train), "\n")
+cat("Test data shape (X_test) flat:", dim(X_test_flat), "\n")
+cat("Test labels shape (y_test):", length(y_test), "\n")
+
+```
+
+
+
+
+
+```{r}
+# HELPER FUNCTIONS
+
+
+relu <- function(x) pmax(0, x)
+
+leaky_relu <- function(x, alpha = 0.01) {
+  pmax(alpha * x, x)
+}
+
+sigmoid <- function(x) 1 / (1 + exp(-x))
+
+binary_cross_entropy <- function(y_true, y_pred) {
+  epsilon <- 1e-7
+  y_pred <- pmin(pmax(y_pred, epsilon), 1 - epsilon)
+  -mean(y_true * log(y_pred) + (1 - y_true) * log(1 - y_pred))
+}
+
+
+# DEFINE LAYERS
+
+
+# 1d conv layer
+conv1d <- function(input, kernel, bias) {
+  output_len <- length(input) - length(kernel) + 1
+  output <- numeric(output_len)
+  for (i in 1:output_len) {
+    window <- input[i:(i + length(kernel) - 1)]
+    output[i] <- sum(window * kernel) + bias
+  }
+  return(output)
+}
+
+
+# max pooling
+max_pool1d <- function(input, pool_size, stride) {
+  pooled <- c()
+  for (i in seq(1, length(input) - pool_size + 1, by = stride)) {
+    pooled <- c(pooled, max(input[i:(i + pool_size - 1)]))
+  }
+  return(pooled)
+}
+
+# fully connected layer
+dense <- function(input, weights, bias) {
+  return(sum(input * weights) + bias)
+}
+
+# prediction
+predict <- function(X, params) {
+  preds <- numeric(nrow(X))
+  for (i in 1:nrow(X)) {
+    x <- as.numeric(X[i, ])
+    conv <- conv1d(x, params$conv_kernel, params$conv_bias)
+    act <- leaky_relu(conv)
+    pool <- max_pool1d(act, pool_size = 2, stride = 2)
+    fc <- dense(pool, params$fc_weights, params$fc_bias)
+    preds[i] <- sigmoid(fc)
+  }
+  return(preds)
+}
+```
+
+
+```{r}
+# TRAINING
+
+
+train <- function(X, y, epochs = 50, lr = 0.01) {
+  # Initialize weights
+  #conv_kernel <- runif(5, -0.1, 0.1)
+  conv_kernel <- rnorm(5, mean = 0, sd = sqrt(2 / (5 + 1)))
+  conv_bias <- 0
+  pool_out_len <- floor((length(X[1,]) - length(conv_kernel) + 1) / 2)
+  #fc_weights <- runif(pool_out_len, -0.1, 0.1)
+  fc_weights <- rnorm(pool_out_len, mean = 0, sd = sqrt(2 / pool_out_len))
+  fc_bias <- 0
+  
+  params <- list(
+    conv_kernel = conv_kernel,
+    conv_bias = conv_bias,
+    fc_weights = fc_weights,
+    fc_bias = fc_bias
+  )
+  
+  for (epoch in 1:epochs) {
+    preds <- predict(X, params)
+    loss <- binary_cross_entropy(y, preds)
+    
+    # Basic gradient estimation via finite differences
+    grad_step <- grad_step <- 1e-5
+    grads <- list()
+    
+    for (param_name in names(params)) {
+      grads[[param_name]] <- numeric(length(params[[param_name]]))
+      for (j in 1:length(params[[param_name]])) {
+        orig_val <- params[[param_name]][j]
+        
+        params[[param_name]][j] <- orig_val + grad_step
+        loss1 <- binary_cross_entropy(y, predict(X, params))
+        
+        params[[param_name]][j] <- orig_val - grad_step
+        loss2 <- binary_cross_entropy(y, predict(X, params))
+        
+        grads[[param_name]][j] <- (loss1 - loss2) / (2 * grad_step)
+        params[[param_name]][j] <- orig_val
+      }
+    }
+    
+    # Gradient descent step
+    for (param_name in names(params)) {
+      params[[param_name]] <- params[[param_name]] - lr * grads[[param_name]]
+    }
+    
+    cat(sprintf("Epoch %d, Loss: %.4f\n", epoch, loss))
+  }
+  
+  return(params)
+}
+```
+
+
+```{r}
+
+params <- train(X_train_flat, y_train, epochs = 100, lr = 0.015)
+predictions <- predict(X_test_flat, params)
+```
+
+```{r}
+predicted_classes
+
+```
+
+
+```{r}
+
+predicted_classes <- ifelse(predictions >= 0.5, 1, 0)
+
+accuracy <- sum(predicted_classes == y_test) / length(y_test)
+cat("Accuracy:", round(accuracy, 4), "\n")
+
+```
+
+
+
+```{r}
+# Find impactful weights
+top_positive_indices <- order(params$fc_weights, decreasing = TRUE)[1:10]
+top_negative_indices <- order(params$fc_weights, decreasing = FALSE)[1:10]
+
+cat("Top 10 features pushing prediction toward Gentrifying (1):\n")
+print(metrics_cols[top_positive_indices])
+
+cat("\nTop 10 features pushing prediction away from Gentrifying (0):\n")
+print(metrics_cols[top_negative_indices])
+```
+```{r}
+library(ggplot2)
+
+top_feats <- data.frame(
+  Feature = c(metrics_cols[top_positive_indices], metrics_cols[top_negative_indices]),
+  Weight = c(params$fc_weights[top_positive_indices], params$fc_weights[top_negative_indices]),
+  Direction = rep(c("Toward Gentrifying", "Away from Gentrifying"), each = 10)
+)
+
+ggplot(top_feats, aes(x = reorder(Feature, Weight), y = Weight, fill = Direction)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Top Features Influencing Gentrification Prediction",
+       x = "Feature", y = "Weight") +
+  theme_minimal()
+```
+
+
+```{r}
+# Convert probs
+predictions_binary <- ifelse(predictions >= 0.5, 1, 0)
+
+library(caret)
+
+conf_matrix <- table(Predicted = predictions_binary, Actual = y_test)
+
+conf_df <- as.data.frame(conf_matrix)
+
+ggplot(conf_df, aes(x = Actual, y = Predicted, fill = Freq)) +
+  geom_tile() +
+  geom_text(aes(label = Freq), color = "white", size = 6) +
+  scale_fill_gradient(low = "gray70", high = "blue") +
+  labs(title = "Confusion Matrix", x = "Actual Label", y = "Predicted Label") +
+  theme_minimal()
+
+```
+
+
+
