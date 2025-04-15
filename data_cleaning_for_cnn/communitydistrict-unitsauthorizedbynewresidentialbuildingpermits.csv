@@ -1,0 +1,60 @@
+short_name,long_name,Community District,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023
+nb_permit_res_units,Units authorized by new residential building permits,MN 01 - Financial District,491,898,321,696,0,0,0,0,0,0,33,171,18,162,6,1544,256,582,0,209,53,0,892,2
+nb_permit_res_units,Units authorized by new residential building permits,MN 02 - Greenwich Village/Soho,31,18,388,192,0,0,0,0,0,0,0,4,27,275,367,84,338,319,368,49,100,106,26,393
+nb_permit_res_units,Units authorized by new residential building permits,MN 03 - Lower East Side/Chinatown,229,366,216,630,0,0,0,0,0,0,78,19,446,299,974,1653,157,389,212,133,195,589,2717,83
+nb_permit_res_units,Units authorized by new residential building permits,MN 04 - Clinton/Chelsea,1151,2092,892,1220,0,0,0,0,0,0,367,1490,2116,864,3681,2321,781,501,555,2284,290,461,890,313
+nb_permit_res_units,Units authorized by new residential building permits,MN 05 - Midtown,1174,0,1025,331,0,0,0,0,0,0,14,271,569,736,1054,799,602,334,134,99,538,41,701,120
+nb_permit_res_units,Units authorized by new residential building permits,MN 06 - Stuyvesant Town/Turtle Bay,495,409,612,146,0,0,0,0,0,0,10,0,0,203,1331,774,674,276,275,202,539,108,536,59
+nb_permit_res_units,Units authorized by new residential building permits,MN 07 - Upper West Side,441,200,174,315,0,0,0,0,60,0,0,535,1131,258,386,1243,322,212,100,342,131,125,252,71
+nb_permit_res_units,Units authorized by new residential building permits,MN 08 - Upper East Side,241,262,457,119,0,0,0,0,0,0,0,58,31,378,384,616,126,296,525,165,32,117,1329,181
+nb_permit_res_units,Units authorized by new residential building permits,MN 09 - Morningside Heights/Hamilton,2,13,170,0,0,0,0,0,0,0,0,0,126,57,501,130,2,222,151,102,390,238,518,0
+nb_permit_res_units,Units authorized by new residential building permits,MN 10 - Central Harlem,261,176,235,627,0,0,0,0,0,0,77,27,322,202,187,534,124,272,431,496,411,252,691,56
+nb_permit_res_units,Units authorized by new residential building permits,MN 11 - East Harlem,334,485,1128,289,0,0,0,0,0,0,327,272,500,55,172,624,402,632,127,823,368,544,1841,42
+nb_permit_res_units,Units authorized by new residential building permits,MN 12 - Washington Heights/Inwood,127,0,0,64,0,0,0,0,0,0,0,0,168,63,62,36,24,106,8,145,0,397,1672,691
+nb_permit_res_units,Units authorized by new residential building permits,BX 01 - Mott Haven/Melrose,240,255,265,248,0,0,0,0,0,0,485,2,444,133,535,436,534,1232,925,1444,1438,1336,2720,473
+nb_permit_res_units,Units authorized by new residential building permits,BX 02 - Hunts Point/Longwood,136,76,108,187,0,0,0,0,0,0,110,107,147,0,16,71,403,359,395,479,17,130,78,709
+nb_permit_res_units,Units authorized by new residential building permits,BX 03 - Morrisania/Crotona,11,310,362,516,0,0,0,0,0,0,259,415,379,541,517,886,255,1065,432,342,764,539,698,149
+nb_permit_res_units,Units authorized by new residential building permits,BX 04 - Highbridge/Concourse,94,350,396,380,0,0,0,0,0,0,127,12,335,131,128,602,360,548,172,932,457,782,1117,512
+nb_permit_res_units,Units authorized by new residential building permits,BX 05 - Fordham/University Heights,130,8,102,190,2,0,3,0,0,0,132,8,117,383,76,529,28,152,566,523,541,783,1803,756
+nb_permit_res_units,Units authorized by new residential building permits,BX 06 - Belmont/East Tremont,103,238,251,272,0,0,0,0,0,0,50,134,207,258,57,1140,703,675,582,654,554,660,1394,400
+nb_permit_res_units,Units authorized by new residential building permits,BX 07 - Kingsbridge Heights/Bedford,3,10,77,4,0,0,0,0,0,0,84,91,95,333,111,469,647,383,695,536,706,804,1277,467
+nb_permit_res_units,Units authorized by new residential building permits,BX 08 - Riverdale/Fieldston,97,34,64,223,0,0,0,0,0,0,76,53,4,117,207,149,34,172,112,89,188,111,332,98
+nb_permit_res_units,Units authorized by new residential building permits,BX 09 - Parkchester/Soundview,212,251,312,212,0,0,0,0,0,0,17,4,158,418,217,0,463,468,31,618,345,310,249,280
+nb_permit_res_units,Units authorized by new residential building permits,BX 10 - Throgs Neck/Co-op City,236,189,276,287,2,0,0,0,4,0,20,55,200,42,27,102,35,30,49,69,67,19,212,159
+nb_permit_res_units,Units authorized by new residential building permits,BX 11 - Morris Park/Bronxdale,64,258,51,59,0,0,0,0,0,0,16,26,20,20,26,196,61,55,118,67,120,56,277,253
+nb_permit_res_units,Units authorized by new residential building permits,BX 12 - Williamsbridge/Baychester,285,130,203,356,0,0,0,0,0,0,85,191,451,248,269,187,47,155,119,369,378,427,745,521
+nb_permit_res_units,Units authorized by new residential building permits,BK 01 - Greenpoint/Williamsburg,757,448,922,1455,0,0,0,0,0,0,221,129,973,1230,2038,6819,700,714,1493,1843,348,1449,5408,667
+nb_permit_res_units,Units authorized by new residential building permits,BK 02 - Fort Greene/Brooklyn Heights,151,223,234,349,0,0,0,0,26,0,380,46,572,2345,2341,3763,1356,1105,1411,2153,1769,1240,5111,439
+nb_permit_res_units,Units authorized by new residential building permits,BK 03 - Bedford Stuyvesant,125,206,895,685,0,0,0,4,10,0,255,268,406,498,864,2781,346,539,647,496,900,762,1981,280
+nb_permit_res_units,Units authorized by new residential building permits,BK 04 - Bushwick,225,180,402,625,0,70,0,0,10,0,80,33,157,264,278,2641,385,558,499,458,197,487,976,130
+nb_permit_res_units,Units authorized by new residential building permits,BK 05 - East New York/Starrett City,392,273,616,456,0,3,0,0,0,0,390,203,184,479,475,421,902,593,910,680,471,1343,2738,301
+nb_permit_res_units,Units authorized by new residential building permits,BK 06 - Park Slope/Carroll Gardens,101,201,281,90,0,0,0,0,0,0,15,17,398,73,727,962,80,183,84,185,106,208,7517,304
+nb_permit_res_units,Units authorized by new residential building permits,BK 07 - Sunset Park,81,55,170,75,0,0,0,0,0,0,21,73,32,99,34,365,100,255,192,220,139,140,997,68
+nb_permit_res_units,Units authorized by new residential building permits,BK 08 - Crown Heights/Prospect Heights,152,183,180,308,3,0,24,0,0,0,10,35,192,390,796,1271,59,246,148,297,946,490,1531,76
+nb_permit_res_units,Units authorized by new residential building permits,BK 09 - South Crown Heights/Lefferts Gardens,24,24,41,132,0,0,3,0,0,0,104,95,150,170,557,1304,130,182,174,517,680,147,925,926
+nb_permit_res_units,Units authorized by new residential building permits,BK 10 - Bay Ridge/Dyker Heights,99,88,160,71,0,0,0,0,0,0,9,14,54,19,6,48,19,3,48,188,43,13,24,21
+nb_permit_res_units,Units authorized by new residential building permits,BK 11 - Bensonhurst,97,92,198,169,0,0,0,0,0,0,32,74,69,49,115,176,89,124,237,129,283,147,52,144
+nb_permit_res_units,Units authorized by new residential building permits,BK 12 - Borough Park,122,117,100,123,0,0,0,0,0,0,52,28,110,157,349,617,140,148,163,141,77,89,265,155
+nb_permit_res_units,Units authorized by new residential building permits,BK 13 - Coney Island,250,151,176,192,0,0,0,112,0,0,63,297,96,62,86,780,212,490,509,502,25,874,304,197
+nb_permit_res_units,Units authorized by new residential building permits,BK 14 - Flatbush/Midwood,0,17,69,44,0,0,0,0,0,0,6,16,25,75,215,1453,156,152,273,660,316,129,1405,197
+nb_permit_res_units,Units authorized by new residential building permits,BK 15 - Sheepshead Bay,134,95,111,320,0,0,0,0,0,1,24,28,21,94,118,687,65,153,261,277,47,119,189,120
+nb_permit_res_units,Units authorized by new residential building permits,BK 16 - Brownsville,34,309,291,309,0,0,0,0,0,0,403,82,139,46,232,688,168,206,542,683,503,357,987,921
+nb_permit_res_units,Units authorized by new residential building permits,BK 17 - East Flatbush,26,21,37,117,0,0,0,0,0,0,7,0,65,153,97,1711,148,188,259,678,428,653,1100,334
+nb_permit_res_units,Units authorized by new residential building permits,BK 18 - Flatlands/Canarsie,129,83,276,231,0,0,0,0,0,0,21,4,9,213,8,62,29,8,2,24,12,81,11,5
+nb_permit_res_units,Units authorized by new residential building permits,QN 01 - Astoria,242,193,277,480,0,0,3,0,0,0,360,226,260,975,447,3572,131,385,1326,1685,893,380,3310,507
+nb_permit_res_units,Units authorized by new residential building permits,QN 02 - Woodside/Sunnyside,116,462,110,63,0,0,0,0,0,0,747,1472,141,1285,2423,5339,285,2379,201,1801,1360,1499,5054,422
+nb_permit_res_units,Units authorized by new residential building permits,QN 03 - Jackson Heights,114,220,150,320,0,0,0,0,0,0,19,85,32,63,109,65,229,75,117,267,27,307,238,167
+nb_permit_res_units,Units authorized by new residential building permits,QN 04 - Elmhurst/Corona,210,194,241,312,0,0,0,0,0,0,231,102,80,97,115,741,232,248,86,123,165,40,151,102
+nb_permit_res_units,Units authorized by new residential building permits,QN 05 - Ridgewood/Maspeth,101,75,117,123,0,0,2,0,0,0,28,9,34,57,102,478,59,37,59,102,88,207,12,50
+nb_permit_res_units,Units authorized by new residential building permits,QN 06 - Rego Park/Forest Hills,81,31,51,68,0,0,0,0,0,0,11,5,59,453,114,171,54,9,72,603,190,167,785,50
+nb_permit_res_units,Units authorized by new residential building permits,QN 07 - Flushing/Whitestone,529,646,365,636,0,2,0,0,10,0,481,454,358,324,429,1089,139,578,818,511,568,330,620,1365
+nb_permit_res_units,Units authorized by new residential building permits,QN 08 - Hillcrest/Fresh Meadows,53,42,417,622,0,15,0,0,0,0,90,73,23,80,98,204,29,113,24,254,137,136,112,34
+nb_permit_res_units,Units authorized by new residential building permits,QN 09 - Kew Gardens/Woodhaven,64,84,104,192,0,0,0,0,6,0,5,200,26,12,9,44,15,96,18,48,97,142,125,119
+nb_permit_res_units,Units authorized by new residential building permits,QN 10 - South Ozone Park/Howard Beach,107,43,93,240,0,0,0,0,3,0,21,18,18,51,29,18,28,36,33,10,30,24,32,28
+nb_permit_res_units,Units authorized by new residential building permits,QN 11 - Bayside/Little Neck,51,61,97,167,0,6,0,0,0,0,93,83,57,56,46,89,71,84,43,57,26,132,64,96
+nb_permit_res_units,Units authorized by new residential building permits,QN 12 - Jamaica/Hollis,218,452,562,341,0,0,0,0,0,0,49,26,266,162,112,516,622,1175,800,607,677,1240,2422,372
+nb_permit_res_units,Units authorized by new residential building permits,QN 13 - Queens Village,112,301,95,93,0,0,4,0,0,0,35,32,57,6,34,28,33,33,24,30,13,31,16,14
+nb_permit_res_units,Units authorized by new residential building permits,QN 14 - Rockaway/Broad Channel,1070,252,515,436,0,0,0,0,8,0,332,329,27,93,197,469,354,347,257,695,820,726,412,487
+nb_permit_res_units,Units authorized by new residential building permits,SI 01 - St. George/Stapleton,522,738,582,1117,0,0,0,0,0,0,101,145,62,698,242,290,160,185,246,140,133,119,504,150
+nb_permit_res_units,Units authorized by new residential building permits,SI 02 - South Beach/Willowbrook,784,440,521,707,0,0,1,0,0,0,86,119,93,242,256,123,357,237,164,155,99,118,112,115
+nb_permit_res_units,Units authorized by new residential building permits,SI 03 - Tottenville/Great Kills,1291,1041,592,635,2,1,4,4,2,2,182,300,235,307,198,237,272,243,300,285,187,202,211,189

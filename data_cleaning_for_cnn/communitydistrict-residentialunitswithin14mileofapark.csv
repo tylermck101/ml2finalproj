@@ -1,0 +1,60 @@
+short_name,long_name,Community District,2017
+prox_park_pct,Residential units within 1/4 mile of a park,BK 06 - Park Slope/Carroll Gardens,0.8547796835723791
+prox_park_pct,Residential units within 1/4 mile of a park,BK 07 - Sunset Park,0.7753412615076555
+prox_park_pct,Residential units within 1/4 mile of a park,BK 08 - Crown Heights/Prospect Heights,0.7674746095416916
+prox_park_pct,Residential units within 1/4 mile of a park,BK 09 - South Crown Heights/Lefferts Gardens,0.7045413703694196
+prox_park_pct,Residential units within 1/4 mile of a park,BK 10 - Bay Ridge/Dyker Heights,0.5979209277015743
+prox_park_pct,Residential units within 1/4 mile of a park,BK 11 - Bensonhurst,0.459774629165282
+prox_park_pct,Residential units within 1/4 mile of a park,BK 12 - Borough Park,0.39646749966768574
+prox_park_pct,Residential units within 1/4 mile of a park,BK 13 - Coney Island,0.8500358298408286
+prox_park_pct,Residential units within 1/4 mile of a park,BK 14 - Flatbush/Midwood,0.29711594083133624
+prox_park_pct,Residential units within 1/4 mile of a park,BK 15 - Sheepshead Bay,0.6561002178649238
+prox_park_pct,Residential units within 1/4 mile of a park,BK 16 - Brownsville,0.887499292626337
+prox_park_pct,Residential units within 1/4 mile of a park,BK 17 - East Flatbush,0.3834332176777766
+prox_park_pct,Residential units within 1/4 mile of a park,BK 18 - Flatlands/Canarsie,0.7251804502079765
+prox_park_pct,Residential units within 1/4 mile of a park,QN 01 - Astoria,0.6333293880932654
+prox_park_pct,Residential units within 1/4 mile of a park,QN 02 - Woodside/Sunnyside,0.7885059943013817
+prox_park_pct,Residential units within 1/4 mile of a park,QN 03 - Jackson Heights,0.6145951893163366
+prox_park_pct,Residential units within 1/4 mile of a park,QN 04 - Elmhurst/Corona,0.6827674007638664
+prox_park_pct,Residential units within 1/4 mile of a park,QN 05 - Ridgewood/Maspeth,0.5437294604049613
+prox_park_pct,Residential units within 1/4 mile of a park,QN 06 - Rego Park/Forest Hills,0.7351713967123484
+prox_park_pct,Residential units within 1/4 mile of a park,QN 07 - Flushing/Whitestone,0.7073388166622446
+prox_park_pct,Residential units within 1/4 mile of a park,QN 08 - Hillcrest/Fresh Meadows,0.7098088318284425
+prox_park_pct,Residential units within 1/4 mile of a park,QN 09 - Kew Gardens/Woodhaven,0.4682044343575419
+prox_park_pct,Residential units within 1/4 mile of a park,QN 10 - South Ozone Park/Howard Beach,0.39846762865534413
+prox_park_pct,Residential units within 1/4 mile of a park,QN 11 - Bayside/Little Neck,0.6865828092243187
+prox_park_pct,Residential units within 1/4 mile of a park,QN 12 - Jamaica/Hollis,0.5874001188668031
+prox_park_pct,Residential units within 1/4 mile of a park,QN 13 - Queens Village,0.38410922849152823
+prox_park_pct,Residential units within 1/4 mile of a park,QN 14 - Rockaway/Broad Channel,0.8160660985421984
+prox_park_pct,Residential units within 1/4 mile of a park,SI 01 - St. George/Stapleton,0.6549093492293913
+prox_park_pct,Residential units within 1/4 mile of a park,SI 02 - South Beach/Willowbrook,0.5686442057291666
+prox_park_pct,Residential units within 1/4 mile of a park,SI 03 - Tottenville/Great Kills,0.5791035915701989
+prox_park_pct,Residential units within 1/4 mile of a park,MN 01 - Financial District,0.9860672111664601
+prox_park_pct,Residential units within 1/4 mile of a park,MN 02 - Greenwich Village/Soho,0.9959099524490407
+prox_park_pct,Residential units within 1/4 mile of a park,MN 03 - Lower East Side/Chinatown,0.9979087357243037
+prox_park_pct,Residential units within 1/4 mile of a park,MN 04 - Clinton/Chelsea,0.7891332470892626
+prox_park_pct,Residential units within 1/4 mile of a park,MN 05 - Midtown,0.6356366528231864
+prox_park_pct,Residential units within 1/4 mile of a park,MN 06 - Stuyvesant Town/Turtle Bay,0.9086810948183707
+prox_park_pct,Residential units within 1/4 mile of a park,MN 07 - Upper West Side,0.9933370833696453
+prox_park_pct,Residential units within 1/4 mile of a park,MN 08 - Upper East Side,0.6862002144250811
+prox_park_pct,Residential units within 1/4 mile of a park,MN 09 - Morningside Heights/Hamilton,0.9996480112636396
+prox_park_pct,Residential units within 1/4 mile of a park,MN 10 - Central Harlem,0.9668817707636753
+prox_park_pct,Residential units within 1/4 mile of a park,MN 11 - East Harlem,0.9998221336843228
+prox_park_pct,Residential units within 1/4 mile of a park,MN 12 - Washington Heights/Inwood,0.9843946261809841
+prox_park_pct,Residential units within 1/4 mile of a park,BX 01 - Mott Haven/Melrose,0.9978928933037791
+prox_park_pct,Residential units within 1/4 mile of a park,BX 02 - Hunts Point/Longwood,0.997107850870274
+prox_park_pct,Residential units within 1/4 mile of a park,BX 03 - Morrisania/Crotona,0.9975678715836196
+prox_park_pct,Residential units within 1/4 mile of a park,BX 04 - Highbridge/Concourse,0.994301662984068
+prox_park_pct,Residential units within 1/4 mile of a park,BX 05 - Fordham/University Heights,0.9934451513398882
+prox_park_pct,Residential units within 1/4 mile of a park,BX 06 - Belmont/East Tremont,0.9968857353838251
+prox_park_pct,Residential units within 1/4 mile of a park,BX 07 - Kingsbridge Heights/Bedford,0.8983693291743988
+prox_park_pct,Residential units within 1/4 mile of a park,BX 08 - Riverdale/Fieldston,0.9433611260534337
+prox_park_pct,Residential units within 1/4 mile of a park,BX 09 - Parkchester/Soundview,0.8925593833569294
+prox_park_pct,Residential units within 1/4 mile of a park,BX 10 - Throgs Neck/Co-op City,0.7506244879199057
+prox_park_pct,Residential units within 1/4 mile of a park,BX 11 - Morris Park/Bronxdale,0.7439792570022267
+prox_park_pct,Residential units within 1/4 mile of a park,BX 12 - Williamsbridge/Baychester,0.45816041099146204
+prox_park_pct,Residential units within 1/4 mile of a park,BK 01 - Greenpoint/Williamsburg,0.8904099622897745
+prox_park_pct,Residential units within 1/4 mile of a park,BK 02 - Fort Greene/Brooklyn Heights,0.9736579275905118
+prox_park_pct,Residential units within 1/4 mile of a park,BK 03 - Bedford Stuyvesant,0.9419384379061798
+prox_park_pct,Residential units within 1/4 mile of a park,BK 04 - Bushwick,0.7652561024409764
+prox_park_pct,Residential units within 1/4 mile of a park,BK 05 - East New York/Starrett City,0.8535756965846909
